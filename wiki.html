@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wiki · DataCAF — Portal de Datos Abiertos</title>
+  <meta name="description" content="Glosario de términos y conceptos de datos abiertos usados en el Portal de Datos Abiertos de CAF." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Inicio">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+        <nav class="navbar-links">
+          <a href="index.html" class="nav-link" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link active" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm" id="nav-login">Log in</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-eyebrow">Base de conocimiento</div>
+          <h1 class="page-hero-title">Wiki de Datos Abiertos</h1>
+          <p class="page-hero-subtitle">Glosario de términos y conceptos que vas a encontrar navegando el portal.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:var(--space-12);">
+      <div class="container">
+        <div class="search-wrapper wiki-search" style="border-radius:var(--radius-xl);">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 20 20" fill="none">
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <input type="search" class="search-input" id="wiki-search" placeholder="Buscar un término..." aria-label="Buscar término del glosario" />
+        </div>
+
+        <div class="wiki-grid" id="wiki-grid" aria-live="polite">
+          <!-- Rendered by JS -->
+        </div>
+
+        <div class="empty-state" id="wiki-empty" style="display:none;">
+          <div class="empty-icon">📖</div>
+          <h3 class="empty-title">Sin resultados</h3>
+          <p class="empty-text">No encontramos ningún término que coincida con tu búsqueda.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina.</p>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 API Docs</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 CAF – Banco de Desarrollo de América Latina. Licencia de Datos Abiertos.</p>
+        <nav class="footer-legal">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const WIKI_TERMS = [
+      { term: "API", text: "Interfaz de Programación de Aplicaciones. Permite consultar el catálogo de DataCAF de forma programática, sin descargar archivos manualmente." },
+      { term: "CKAN", text: "Software de código abierto usado por gobiernos y organismos para publicar y gestionar catálogos de datos abiertos, incluyendo el Data Lake de CAF." },
+      { term: "Conjunto de datos (Dataset)", text: "Unidad publicable del catálogo: un archivo o grupo de archivos relacionados, con sus metadatos, formatos y organismo responsable." },
+      { term: "Datos abiertos", text: "Datos que cualquier persona puede usar, reutilizar y redistribuir libremente, sujetos como máximo a la atribución de la fuente." },
+      { term: "Formato abierto", text: "Formato de archivo no propietario y de especificación pública, como CSV o JSON, que cualquier herramienta puede leer." },
+      { term: "Frecuencia de actualización", text: "Periodicidad con la que un organismo revisa y publica nuevos datos para un dataset — por ejemplo, anual o trimestral." },
+      { term: "Gobierno abierto", text: "Modelo de gestión pública basado en la transparencia, la participación ciudadana y la colaboración, del cual los datos abiertos son un pilar central." },
+      { term: "Interoperabilidad", text: "Capacidad de los datos de integrarse fácilmente en distintos sistemas gracias a formatos y metadatos estandarizados." },
+      { term: "Licencia abierta", text: "Términos legales bajo los cuales se autoriza el uso, copia y redistribución de un dataset — en DataCAF, la Licencia de Datos Abiertos CAF." },
+      { term: "Metadatos", text: "Información que describe un dataset: título, organismo, categoría, fecha de actualización, formatos y cobertura temporal." },
+      { term: "Organismo publicador", text: "Entidad responsable de recolectar, validar y mantener actualizado un dataset dentro del catálogo." },
+      { term: "Portal de datos", text: "Sitio web que centraliza la búsqueda, exploración y descarga de datasets — como este portal, DataCAF." },
+      { term: "Recurso (Resource)", text: "Cada archivo descargable asociado a un dataset, en un formato específico (por ejemplo, el CSV o el JSON de un mismo conjunto de datos)." },
+      { term: "Repositorio de datos (Data Lake)", text: "Infraestructura donde se almacenan y organizan los datos crudos y procesados antes de publicarse en el catálogo." },
+      { term: "Serie histórica", text: "Conjunto de valores de un indicador medidos a lo largo del tiempo, como el PIB anual de 1990 a 2024." },
+      { term: "Suscripción a dataset", text: "Función que permite a un usuario registrado recibir una notificación cuando un dataset que sigue se actualiza." }
+    ];
+
+    function renderWiki(filter) {
+      const grid = document.getElementById('wiki-grid');
+      const empty = document.getElementById('wiki-empty');
+      const q = (filter || '').toLowerCase();
+      const filtered = WIKI_TERMS.filter(t => !q || t.term.toLowerCase().includes(q) || t.text.toLowerCase().includes(q));
+      filtered.sort((a, b) => a.term.localeCompare(b.term));
+
+      if (!filtered.length) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      grid.innerHTML = filtered.map(t => `
+        <div class="wiki-term reveal">
+          <div class="wiki-term-title">
+            <span class="wiki-term-letter">${t.term.charAt(0)}</span>
+            <span>${t.term}</span>
+          </div>
+          <p class="wiki-term-text">${t.text}</p>
+        </div>`).join('');
+      setTimeout(() => grid.querySelectorAll('.reveal').forEach(el => el.classList.add('revealed')), 30);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWiki('');
+      const input = document.getElementById('wiki-search');
+      if (input) {
+        let t;
+        input.addEventListener('input', () => {
+          clearTimeout(t);
+          t = setTimeout(() => renderWiki(input.value.trim()), 200);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

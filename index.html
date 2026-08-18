@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Datos Abiertos · CAF — Banco de Desarrollo de América Latina</title>
+  <meta name="description" content="Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina. Accede a datasets, APIs e indicadores de desarrollo económico, social e infraestructura para la región." />
+  <meta name="keywords" content="datos abiertos, open data, CAF, América Latina, datasets, indicadores, desarrollo" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Portal de Datos Abiertos · CAF" />
+  <meta property="og:description" content="Datos abiertos para el desarrollo de América Latina. Descubre 450+ datasets de economía, infraestructura, salud, educación y más." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caf.github.io/datos-abiertos/" />
+  <meta property="og:image" content="assets/img/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portal de Datos Abiertos · CAF" />
+  <meta name="twitter:description" content="Datos abiertos para el desarrollo de América Latina." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://caf.github.io/datos-abiertos/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DataCatalog",
+    "name": "Portal de Datos Abiertos CAF",
+    "description": "Catálogo oficial de datos abiertos de CAF - Banco de Desarrollo de América Latina",
+    "url": "https://caf.github.io/datos-abiertos/",
+    "provider": {
+      "@type": "Organization",
+      "name": "CAF - Banco de Desarrollo de América Latina y el Caribe",
+      "url": "https://www.caf.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       MASTHEAD INSTITUCIONAL
+  ══════════════════════════════════════════════════════════ -->
+  <div class="masthead" role="banner" aria-label="Organismo oficial">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NOTIFICATION BANNER
+  ══════════════════════════════════════════════════════════ -->
+  <div class="notification-banner banner-enter" id="notification-banner" role="alert" aria-live="polite">
+    <div class="notification-inner">
+      <div class="notification-text">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="7.5" stroke="hsl(270,60%,55%)" stroke-width="1"/>
+          <path d="M8 5v3M8 10v1" stroke="hsl(270,60%,55%)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>🚀 <strong>Nuevo:</strong> Ahora disponibles 45 nuevos datasets de indicadores climáticos.
+          <a href="datasets.html">Explorar datasets →</a>
+        </span>
+      </div>
+      <button class="notification-dismiss" id="dismiss-banner" aria-label="Cerrar notificación" title="Cerrar">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-inner">
+        <!-- Logo -->
+        <a href="index.html" class="navbar-logo" aria-label="Inicio - Portal de Datos Abiertos CAF">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="navbar-links" aria-label="Menú principal">
+          <a href="index.html" class="nav-link active" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema oscuro/claro">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm" id="nav-login">Log in</a>
+        </nav>
+
+        <!-- Mobile toggle -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+    <div class="mobile-menu-panel" tabindex="-1">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" aria-label="Cerrar menú" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links" aria-label="Menú móvil">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════════
+         HERO SECTION
+    ══════════════════════════════════════════════════════════ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="hero-tag hero-animate" aria-label="Datos Abiertos Oficiales">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <circle cx="6" cy="6" r="5" opacity="0.3"/>
+              <circle cx="6" cy="6" r="2.5"/>
+            </svg>
+            Datos Abiertos Oficiales para Latinoamérica
+          </div>
+
+          <h1 class="hero-title hero-animate-delay" id="hero-title">
+            Descubre datos para el<br/>
+            <span class="gradient-text">desarrollo sostenible</span>
+          </h1>
+
+          <p class="hero-subtitle hero-animate-delay-2">
+            Accede libremente a cientos de datasets de economía, infraestructura, salud,
+            educación y más — respaldados por CAF, el Banco de Desarrollo de América Latina.
+          </p>
+
+          <!-- Search -->
+          <div class="hero-search hero-animate-delay-2" role="search">
+            <div class="search-wrapper">
+              <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              <input
+                type="search"
+                class="search-input"
+                id="hero-search-input"
+                placeholder="Buscar datasets — ej. PIB, infraestructura, educación..."
+                autocomplete="off"
+                aria-label="Buscar en el catálogo de datos"
+              />
+              <button class="search-btn" id="hero-search-btn" type="button" aria-label="Buscar">
+                Buscar
+              </button>
+            </div>
+            <!-- Quick hint chips -->
+            <div class="hero-hints" aria-label="Búsquedas populares">
+              <span>Populares:</span>
+              <a href="datasets.html?q=PIB" class="hint-chip">PIB regional</a>
+              <a href="datasets.html?q=energia" class="hint-chip">Energía renovable</a>
+              <a href="datasets.html?q=transporte" class="hint-chip">Transporte</a>
+              <a href="datasets.html?q=salud" class="hint-chip">Salud</a>
+              <a href="datasets.html?q=agua" class="hint-chip">Agua y saneamiento</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         STATS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="stats-section" aria-labelledby="stats-title">
+      <div class="container">
+        <h2 class="sr-only" id="stats-title">Estadísticas del portal</h2>
+        <div class="stats-grid">
+
+          <div class="stat-item reveal" aria-label="Datasets disponibles">
+            <div class="stat-icon">📊</div>
+            <div class="stat-number" data-target="487" data-suffix="+">0</div>
+            <div class="stat-label">Datasets disponibles</div>
+          </div>
+
+          <div class="stat-item reveal reveal-delay-1" aria-label="Organismos colaboradores">
+            <div class="stat-icon">🏛️</div>
+            <div class="stat-number" data-target="32" data-suffix="">0</div>
+            <div class="stat-label">Organismos colaboradores</div>
+          </div>
+
+          <div class="stat-item reveal reveal-delay-2" aria-label="Países de la región">
+            <div class="stat-icon">🌎</div>
+            <div class="stat-number" data-target="26" data-suffix="">0</div>
+            <div class="stat-label">Países de la región</div>
+          </div>
+
+          <div class="stat-item reveal reveal-delay-3" aria-label="APIs activas">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-number" data-target="18" data-suffix="">0</div>
+            <div class="stat-label">APIs activas</div>
+          </div>
+
+          <div class="stat-item reveal reveal-delay-4" aria-label="Descargas este mes">
+            <div class="stat-icon">⬇️</div>
+            <div class="stat-number" data-target="94" data-suffix="K">0</div>
+            <div class="stat-label">Descargas este mes</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CATEGORÍAS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="categories-section section" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Explorar por tema</div>
+          <h2 class="section-title" id="categories-title">Encuentra datos por categoría</h2>
+          <p class="section-subtitle">Navega entre las principales temáticas de desarrollo de la región</p>
+        </div>
+
+        <div class="categories-grid" id="categories-grid">
+
+          <a href="datasets.html?cat=economia" class="category-card reveal reveal-scale" id="cat-economia"
+             style="--cat-color: hsl(152, 68%, 40%); --cat-bg: hsl(152, 68%, 94%);"
+             aria-label="Categoría Economía">
+            <div class="category-icon">💹</div>
+            <div>
+              <div class="category-name">Economía y Finanzas</div>
+              <div class="category-count">128 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=infraestructura" class="category-card reveal reveal-scale reveal-delay-1" id="cat-infra"
+             style="--cat-color: hsl(244, 79%, 55%); --cat-bg: hsl(244, 79%, 94%);"
+             aria-label="Categoría Infraestructura">
+            <div class="category-icon">🏗️</div>
+            <div>
+              <div class="category-name">Infraestructura</div>
+              <div class="category-count">87 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=energia" class="category-card reveal reveal-scale reveal-delay-2" id="cat-energia"
+             style="--cat-color: hsl(36, 96%, 50%); --cat-bg: hsl(36, 96%, 93%);"
+             aria-label="Categoría Energía">
+            <div class="category-icon">⚡</div>
+            <div>
+              <div class="category-name">Energía y Clima</div>
+              <div class="category-count">65 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=salud" class="category-card reveal reveal-scale reveal-delay-3" id="cat-salud"
+             style="--cat-color: hsl(4, 86%, 58%); --cat-bg: hsl(4, 86%, 95%);"
+             aria-label="Categoría Salud">
+            <div class="category-icon">🏥</div>
+            <div>
+              <div class="category-name">Salud</div>
+              <div class="category-count">54 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=educacion" class="category-card reveal reveal-scale reveal-delay-1" id="cat-edu"
+             style="--cat-color: hsl(221, 67%, 50%); --cat-bg: hsl(221, 67%, 94%);"
+             aria-label="Categoría Educación">
+            <div class="category-icon">🎓</div>
+            <div>
+              <div class="category-name">Educación</div>
+              <div class="category-count">48 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=medioambiente" class="category-card reveal reveal-scale reveal-delay-2" id="cat-env"
+             style="--cat-color: hsl(152, 68%, 35%); --cat-bg: hsl(152, 68%, 93%);"
+             aria-label="Categoría Medioambiente">
+            <div class="category-icon">🌿</div>
+            <div>
+              <div class="category-name">Medioambiente</div>
+              <div class="category-count">43 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=transporte" class="category-card reveal reveal-scale reveal-delay-3" id="cat-trans"
+             style="--cat-color: hsl(270, 60%, 55%); --cat-bg: hsl(270, 60%, 94%);"
+             aria-label="Categoría Transporte">
+            <div class="category-icon">🚌</div>
+            <div>
+              <div class="category-name">Transporte y Movilidad</div>
+              <div class="category-count">38 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="datasets.html?cat=social" class="category-card reveal reveal-scale reveal-delay-4" id="cat-social"
+             style="--cat-color: hsl(320, 70%, 50%); --cat-bg: hsl(320, 70%, 94%);"
+             aria-label="Categoría Desarrollo Social">
+            <div class="category-icon">🤝</div>
+            <div>
+              <div class="category-name">Desarrollo Social</div>
+              <div class="category-count">32 datasets</div>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         DATASETS DESTACADOS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="datasets-section" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Datasets destacados</div>
+          <h2 class="section-title" id="featured-title">Los más recientes y populares</h2>
+        </div>
+
+        <div class="datasets-grid" id="featured-datasets">
+
+          <!-- Dataset 1 -->
+          <article class="dataset-card reveal hover-lift" aria-labelledby="ds-1-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Economía</span>
+              <div class="dataset-formats">
+                <span class="badge badge-csv">CSV</span>
+                <span class="badge badge-api">API</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-1-title">Producto Interno Bruto (PIB) — Series Históricas por País 1990-2024</h3>
+            <p class="dataset-desc">PIB nominal y real en dólares corrientes y constantes. Series históricas anuales para los 26 países miembros de CAF con desagregación sectorial por sector primario, secundario y terciario.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>Ago 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>12,847 vistas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dataset 2 -->
+          <article class="dataset-card reveal reveal-delay-1 hover-lift" aria-labelledby="ds-2-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Infraestructura</span>
+              <div class="dataset-formats">
+                <span class="badge badge-json">JSON</span>
+                <span class="badge badge-shp">SHP</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-2-title">Red Vial Latinoamérica — Infraestructura de Transporte 2023</h3>
+            <p class="dataset-desc">Datos geoespaciales de la red de carreteras, autopistas y rutas troncales de América Latina. Incluye estado de vías, tipo de superficie y año de construcción.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>Jul 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>8,231 vistas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dataset 3 -->
+          <article class="dataset-card reveal reveal-delay-2 hover-lift" aria-labelledby="ds-3-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Energía</span>
+              <div class="dataset-formats">
+                <span class="badge badge-csv">CSV</span>
+                <span class="badge badge-xlsx">XLSX</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-3-title">Acceso a Electricidad y Energías Renovables por País 2010-2023</h3>
+            <p class="dataset-desc">Cobertura eléctrica, capacidad instalada, generación por fuente (solar, eólica, hídrica, térmica) y emisiones del sector energético para cada país de la región.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>Jun 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>7,564 vistas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dataset 4 -->
+          <article class="dataset-card reveal reveal-delay-1 hover-lift" aria-labelledby="ds-4-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Social</span>
+              <div class="dataset-formats">
+                <span class="badge badge-api">API</span>
+                <span class="badge badge-json">JSON</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-4-title">Índice de Pobreza Multidimensional — Latinoamérica 2000-2023</h3>
+            <p class="dataset-desc">Medición multidimensional de la pobreza considerando educación, salud, vivienda y servicios básicos. Datos comparables entre países y desagregados por sexo, edad y área geográfica.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>May 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>6,891 vistas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dataset 5 -->
+          <article class="dataset-card reveal reveal-delay-2 hover-lift" aria-labelledby="ds-5-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Medioambiente</span>
+              <div class="dataset-formats">
+                <span class="badge badge-csv">CSV</span>
+                <span class="badge badge-api">API</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-5-title">Emisiones de GEI por Sector — Inventario Nacional 1990-2022</h3>
+            <p class="dataset-desc">Inventario de emisiones de gases de efecto invernadero por sector (energía, transporte, agropecuario, residuos, industria) con equivalencias en CO₂ para 20 países de la región.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>Abr 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>5,432 vistas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Dataset 6 -->
+          <article class="dataset-card reveal reveal-delay-3 hover-lift" aria-labelledby="ds-6-title">
+            <div class="dataset-card-header">
+              <span class="dataset-org">CAF · Educación</span>
+              <div class="dataset-formats">
+                <span class="badge badge-json">JSON</span>
+                <span class="badge badge-csv">CSV</span>
+              </div>
+            </div>
+            <h3 class="dataset-title" id="ds-6-title">Indicadores Educativos: Matrícula, Deserción y Aprendizajes LAC</h3>
+            <p class="dataset-desc">Tasas de matrícula escolar, deserción, aprendizajes en lectura y matemáticas, y gasto público en educación. Series anuales para educación primaria, secundaria y terciaria.</p>
+            <div class="dataset-footer">
+              <div class="dataset-meta">
+                <span>📅</span>
+                <span>Mar 2024</span>
+              </div>
+              <div class="dataset-views">
+                <span>👁</span>
+                <span>4,879 vistas</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Ver todos button -->
+        <div style="text-align:center;margin-top:var(--space-10);">
+          <a href="datasets.html" class="btn btn-outline btn-lg" id="btn-ver-todos">
+            Ver todos los datasets
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         CTA BANNER
+    ══════════════════════════════════════════════════════════ -->
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 class="cta-title reveal" id="cta-title">
+          ¿Tu organización tiene datos que compartir?
+        </h2>
+        <p class="cta-subtitle reveal">
+          Únete al ecosistema de datos abiertos de CAF y contribuye al desarrollo sostenible
+          de América Latina publicando tus datasets.
+        </p>
+        <div class="cta-actions reveal">
+          <a href="https://www.caf.com/contacto" target="_blank" rel="noopener" class="btn btn-white btn-lg" id="btn-publicar">
+            📤 Publicar mis datos
+          </a>
+          <a href="about.html" class="btn btn-outline-white btn-lg" id="btn-saber-mas">
+            Saber más
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Inicio - DataCAF">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">
+            Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina y el Caribe.
+            Comprometidos con la transparencia y el acceso libre al conocimiento.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://twitter.com/cafbanco" target="_blank" rel="noopener" class="social-btn" aria-label="Twitter CAF" title="Twitter">𝕏</a>
+            <a href="https://www.linkedin.com/company/cafbanco" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn CAF" title="LinkedIn">in</a>
+            <a href="https://github.com/caf" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub CAF" title="GitHub">⌨</a>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo de datasets</a></li>
+            <li><a href="datasets.html?format=api" class="footer-link">⚡ APIs disponibles</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca del portal</a></li>
+            <li><a href="about.html#metodologia" class="footer-link">📖 Metodología</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 Documentación API</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia abierta</a></li>
+            <li><a href="about.html#faq" class="footer-link">❓ Preguntas frecuentes</a></li>
+            <li><a href="https://www.caf.com" target="_blank" rel="noopener" class="footer-link">🌐 CAF.com ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 3 -->
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#publicar" class="footer-link">📤 Publicar datos</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos de uso</a></li>
+            <li><a href="about.html#privacidad" class="footer-link">🔒 Privacidad</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2024 CAF – Banco de Desarrollo de América Latina y el Caribe.
+          Datos publicados bajo <strong>Licencia de Datos Abiertos CAF</strong>.
+        </p>
+        <nav class="footer-legal" aria-label="Links legales">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════════════ -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

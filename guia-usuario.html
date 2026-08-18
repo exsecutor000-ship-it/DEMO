@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de Usuario · DataCAF — Portal de Datos Abiertos</title>
+  <meta name="description" content="Guía completa para usar el Portal de Datos Abiertos de CAF: cómo buscar, explorar, descargar y consumir datasets vía API." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Inicio">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+        <nav class="navbar-links">
+          <a href="index.html" class="nav-link" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link active" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm" id="nav-login">Log in</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-eyebrow">Documentación</div>
+          <h1 class="page-hero-title">Guía de Usuario</h1>
+          <p class="page-hero-subtitle">Todo lo que necesitas saber para buscar, explorar, descargar y consumir los datos publicados en DataCAF.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:var(--space-12);">
+      <div class="container">
+        <div class="docs-layout">
+
+          <nav class="docs-toc" id="docs-toc" aria-label="Contenido de la guía">
+            <a href="#antecedentes" class="docs-toc-link active">Antecedentes</a>
+            <a href="#buscar" class="docs-toc-link">Cómo buscar datasets</a>
+            <a href="#explorar" class="docs-toc-link">Explorar un dataset</a>
+            <a href="#descargar" class="docs-toc-link">Descargar datos</a>
+            <a href="#api" class="docs-toc-link">Usar la API</a>
+            <a href="#calidad" class="docs-toc-link">Calidad de datos y enlaces rotos</a>
+            <a href="#publicadores" class="docs-toc-link">Para organismos publicadores</a>
+          </nav>
+
+          <div class="docs-content">
+
+            <section id="antecedentes">
+              <h2>Antecedentes</h2>
+              <div class="content-prose">
+                <p>DataCAF es el catálogo abierto de datos de CAF — Banco de Desarrollo de América Latina y el Caribe. Reúne los datasets que produce y recopila la institución para impulsar la investigación, la política pública y la innovación en la región.</p>
+                <p>El objetivo de DataCAF es dar acceso público a los datos, cumplir la misión institucional de CAF, impulsar la innovación y sostener los principios de un gobierno abierto y transparente. Los organismos colaboradores remiten metadatos — título, descripción, categoría y enlaces de acceso — que el catálogo utiliza para mantenerse actualizado.</p>
+              </div>
+            </section>
+
+            <section id="buscar">
+              <h2>Cómo buscar datasets</h2>
+              <div class="content-prose">
+                <p>Desde la <a href="index.html">página de inicio</a> puedes escribir un término en el buscador principal, o ir directamente al <a href="datasets.html">catálogo completo</a>.</p>
+                <ul>
+                  <li>Usa el <strong>buscador de texto</strong> para encontrar coincidencias en el título, la descripción o el organismo.</li>
+                  <li>Filtra por <strong>categoría</strong>, <strong>formato</strong> u <strong>organismo</strong> desde el panel lateral del catálogo.</li>
+                  <li>Ordena los resultados por relevancia, más recientes o más populares.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="explorar">
+              <h2>Explorar un dataset</h2>
+              <div class="content-prose">
+                <p>Al hacer clic en un resultado, accedes a la página de detalle del dataset, donde encontrarás:</p>
+                <ul>
+                  <li>Metadatos: última actualización, frecuencia, cobertura temporal y organismo responsable.</li>
+                  <li>Un <strong>explorador de datos</strong> con una muestra de columnas y filas antes de descargar el archivo completo.</li>
+                  <li>Datasets relacionados de la misma categoría.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="descargar">
+              <h2>Descargar datos</h2>
+              <div class="content-prose">
+                <p>Cada dataset puede descargarse directamente desde su página de detalle, en los formatos disponibles (CSV, JSON, XLSX, SHP o vía API). No se requiere iniciar sesión para descargar datos públicos.</p>
+                <p>Si quieres recibir una notificación cuando el dataset se actualice, puedes <a href="login.html">iniciar sesión</a> y suscribirte desde su página de detalle.</p>
+              </div>
+            </section>
+
+            <section id="api">
+              <h2>Usar la API</h2>
+              <div class="content-prose">
+                <p>La API pública de DataCAF permite consultar el catálogo de forma programática, sin autenticación para uso liviano. Revisa los endpoints disponibles, ejemplos de código y límites de uso en la sección <a href="about.html#api-docs">Documentación de la API</a>.</p>
+              </div>
+            </section>
+
+            <section id="calidad">
+              <h2>Calidad de datos y enlaces rotos</h2>
+              <div class="content-prose">
+                <p>DataCAF es un catálogo de metadatos: muestra información sobre los datasets publicados y mantenidos por cada organismo colaborador. El portal no aloja los datos en sí, ni controla su exactitud o disponibilidad directamente.</p>
+                <p>Si encuentras un enlace roto, un error de metadatos o un problema de calidad, contáctanos indicando el nombre del dataset y una descripción del problema a <strong><a href="mailto:datosabiertos@caf.com">datosabiertos@caf.com</a></strong>.</p>
+              </div>
+            </section>
+
+            <section id="publicadores">
+              <h2>Para organismos publicadores</h2>
+              <div class="content-prose">
+                <p>Si tu organización quiere publicar datasets en DataCAF, revisa el proceso completo en <a href="about.html#publicar">Publicar mis datos</a>: contacto inicial, revisión técnica y publicación en el catálogo.</p>
+                <p>Los datasets publicados deben cumplir los <a href="about.html#que-son">principios de datos abiertos</a> del portal y se distribuyen bajo la <a href="about.html#licencia">Licencia de Datos Abiertos CAF</a>.</p>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina.</p>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 API Docs</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 CAF – Banco de Desarrollo de América Latina. Licencia de Datos Abiertos.</p>
+        <nav class="footer-legal">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toc = document.getElementById('docs-toc');
+      if (!toc) return;
+      const links = Array.from(toc.querySelectorAll('.docs-toc-link'));
+      const sections = links.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const link = toc.querySelector(`.docs-toc-link[href="#${entry.target.id}"]`);
+          if (link && entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      sections.forEach(s => observer.observe(s));
+    });
+  </script>
+</body>
+</html>

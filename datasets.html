@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Datasets · DataCAF — Portal de Datos Abiertos</title>
+  <meta name="description" content="Explora el catálogo completo de datasets de CAF. Busca y filtra 487+ datasets de economía, infraestructura, salud, energía y más para América Latina." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Inicio">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+        <nav class="navbar-links">
+          <a href="index.html" class="nav-link" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link active" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm" id="nav-login">Log in</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-eyebrow">Catálogo de datos</div>
+          <h1 class="page-hero-title">Todos los Datasets</h1>
+          <p class="page-hero-subtitle">Busca, filtra y descarga datos abiertos de CAF para el desarrollo de América Latina</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catalog: sidebar de filtros + lista de resultados (estilo catalog.data.gov) -->
+    <section class="section" style="padding-block:var(--space-8) var(--space-20);" aria-label="Catálogo de datasets">
+      <div class="container">
+        <div class="catalog-layout">
+
+          <!-- Sidebar de filtros -->
+          <aside class="catalog-sidebar" aria-label="Filtros del catálogo">
+            <div class="facet-group">
+              <div class="facet-title">Categoría</div>
+              <div class="facet-list" id="facet-category" role="group" aria-label="Filtrar por categoría">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+            <div class="facet-group">
+              <div class="facet-title">Formato</div>
+              <div class="facet-list" id="facet-format" role="group" aria-label="Filtrar por formato">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+            <div class="facet-group">
+              <div class="facet-title">Organismo</div>
+              <div class="facet-list" id="facet-org" role="group" aria-label="Filtrar por organismo">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="clearFilters()" id="btn-clear-filters" style="align-self:flex-start;">Limpiar filtros</button>
+          </aside>
+
+          <!-- Resultados -->
+          <div class="catalog-main" aria-live="polite">
+            <div class="catalog-toolbar">
+              <div class="search-wrapper">
+                <svg class="search-icon" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <input type="search" class="search-input" id="datasets-search" placeholder="Buscar datasets..." aria-label="Buscar datasets" />
+              </div>
+              <select class="sort-select" id="sort-select" aria-label="Ordenar resultados">
+                <option value="relevance">Más relevantes</option>
+                <option value="recent">Más recientes</option>
+                <option value="popular">Más populares</option>
+              </select>
+            </div>
+
+            <div class="results-header">
+              <p class="results-count" id="results-count">Cargando...</p>
+            </div>
+
+            <div class="dataset-list" id="datasets-container" aria-label="Listado de datasets">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="pagination" id="pagination" role="navigation" aria-label="Paginación"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina.</p>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 API Docs</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 CAF – Banco de Desarrollo de América Latina. Licencia de Datos Abiertos.</p>
+        <nav class="footer-legal">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
