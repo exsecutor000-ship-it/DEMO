@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar Sesión · DataCAF</title>
+  <meta name="description" content="Inicia sesión en DataCAF para gestionar tus descargas de datasets, o accede como organismo colaborador para publicar y administrar datos." />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+</head>
+<body>
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Inicio">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+        <nav class="navbar-links">
+          <a href="index.html" class="nav-link" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm active" id="nav-login">Log in</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <div class="page-hero" style="padding-block:var(--space-12) var(--space-8);">
+      <div class="container">
+        <div class="page-hero-inner" style="text-align:center;">
+          <div class="section-eyebrow" style="justify-content:center;">Acceso al portal</div>
+          <h1 class="page-hero-title">Iniciar sesión</h1>
+          <p class="page-hero-subtitle" style="margin-inline:auto;">Elige el tipo de acceso según tu perfil.</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-grid">
+
+          <!-- Usuarios generales -->
+          <div class="auth-card reveal">
+            <div class="auth-card-icon">👤</div>
+            <h2 class="auth-card-title">Usuarios generales</h2>
+            <p class="auth-card-text">Inicia sesión para guardar búsquedas, gestionar tus descargas y recibir notificaciones cuando se actualicen los datasets que sigues.</p>
+            <form class="auth-form" id="user-login-form" onsubmit="return false;">
+              <label class="auth-label" for="user-email">Correo electrónico</label>
+              <input class="input" type="email" id="user-email" placeholder="nombre@correo.com" autocomplete="email" required />
+              <button type="submit" class="btn btn-primary" id="btn-get-otp">Obtener código (OTP)</button>
+            </form>
+            <p class="auth-footnote">¿Nuevo en DataCAF? <a href="mailto:datosabiertos@caf.com">Crear cuenta</a></p>
+          </div>
+
+          <!-- Organismos / admin -->
+          <div class="auth-card reveal reveal-delay-1">
+            <div class="auth-card-icon">🏛️</div>
+            <h2 class="auth-card-title">Organismos colaboradores</h2>
+            <p class="auth-card-text">Accede como administrador para publicar nuevos datasets, gestionar actualizaciones y ver estadísticas de uso de tu organismo.</p>
+            <div style="margin-top:auto;">
+              <a href="about.html#publicar" class="btn btn-outline" style="width:100%;">Ir al acceso de administrador</a>
+            </div>
+            <p class="auth-footnote">¿Tu organización aún no publica datos? <a href="about.html#publicar">Conoce cómo sumarte</a></p>
+          </div>
+
+        </div>
+
+        <p class="content-prose" style="text-align:center;max-width:520px;margin-inline:auto;margin-top:var(--space-10);font-size:var(--text-xs);">
+          Esta es una demostración del portal DataCAF. El inicio de sesión no está conectado a un sistema real de autenticación.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina.</p>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 API Docs</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 CAF – Banco de Desarrollo de América Latina. Licencia de Datos Abiertos.</p>
+        <nav class="footer-legal">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('user-login-form');
+      const btn = document.getElementById('btn-get-otp');
+      if (form) form.addEventListener('submit', () => {
+        btn.textContent = '✅ Código enviado (demo)';
+        setTimeout(() => { btn.textContent = 'Obtener código (OTP)'; }, 2500);
+      });
+    });
+  </script>
+</body>
+</html>

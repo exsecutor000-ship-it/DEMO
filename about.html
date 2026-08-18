@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acerca del Portal · DataCAF — Portal de Datos Abiertos</title>
+  <meta name="description" content="Conoce la misión de DataCAF, qué son los datos abiertos, cómo usar la API, la licencia de uso, cómo publicar tus datos y las preguntas frecuentes del portal." />
+  <meta name="keywords" content="datos abiertos, open data, CAF, licencia abierta, API, metodología, FAQ" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Acerca del Portal · DataCAF" />
+  <meta property="og:description" content="Misión, metodología, API, licencia y preguntas frecuentes del Portal de Datos Abiertos de CAF." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://caf.github.io/datos-abiertos/about.html" />
+  <meta property="og:image" content="assets/img/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Acerca del Portal · DataCAF" />
+  <meta name="twitter:description" content="Misión, metodología, API, licencia y preguntas frecuentes del portal." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://caf.github.io/datos-abiertos/about.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Acerca del Portal de Datos Abiertos CAF",
+    "url": "https://caf.github.io/datos-abiertos/about.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Portal de Datos Abiertos CAF",
+      "url": "https://caf.github.io/datos-abiertos/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <div class="masthead" role="banner" aria-label="Organismo oficial">
+    <div class="masthead-inner">
+      <svg class="masthead-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M12 2v15M3 7l9 5 9-5" stroke="#6253E8" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Portal Oficial · CAF – Banco de Desarrollo de América Latina y el Caribe</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+      <div class="navbar-inner">
+        <a href="index.html" class="navbar-logo" aria-label="Inicio - Portal de Datos Abiertos CAF">
+          <svg class="navbar-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+            <polygon points="16,8 23,12 23,20 16,24 9,20 9,12" fill="#6253E8" opacity="0.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="#6253E8"/>
+          </svg>
+          <span class="navbar-logo-text">Data<span>CAF</span></span>
+        </a>
+        <nav class="navbar-links" aria-label="Menú principal">
+          <a href="index.html" class="nav-link" id="nav-inicio">Inicio</a>
+          <a href="datasets.html" class="nav-link" id="nav-datasets">Datasets</a>
+          <a href="guia-usuario.html" class="nav-link" id="nav-guia">Guía de Usuario</a>
+          <a href="wiki.html" class="nav-link" id="nav-wiki">Wiki</a>
+          <a href="about.html" class="nav-link active" id="nav-acerca">Acerca de</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema oscuro/claro">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm" id="nav-login">Log in</a>
+        </nav>
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M2 5h16M2 10h16M2 15h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+    <div class="mobile-menu-panel" tabindex="-1">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <span style="font-weight:700;color:var(--text-primary)">DataCAF</span>
+        <button id="mobile-close" aria-label="Cerrar menú" style="cursor:pointer;background:none;border:none;font-size:1.2rem;color:var(--text-secondary)">✕</button>
+      </div>
+      <hr />
+      <nav class="mobile-menu-links" aria-label="Menú móvil">
+        <a href="index.html" class="nav-link">🏠 Inicio</a>
+        <a href="datasets.html" class="nav-link">📊 Datasets</a>
+        <a href="guia-usuario.html" class="nav-link">📘 Guía de Usuario</a>
+        <a href="wiki.html" class="nav-link">📚 Wiki</a>
+        <a href="about.html" class="nav-link">ℹ️ Acerca de</a>
+        <a href="login.html" class="nav-link">🔑 Log in</a>
+      </nav>
+      <hr />
+      <button id="mobile-theme-toggle" class="btn btn-outline" style="width:100%;margin-top:1rem;">
+        <span id="mobile-theme-icon">🌙</span> Cambiar tema
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <div class="section-eyebrow">Acerca del portal</div>
+          <h1 class="page-hero-title">Datos abiertos para el desarrollo de América Latina</h1>
+          <p class="page-hero-subtitle">DataCAF reúne, estandariza y publica libremente los datos que produce y recopila CAF para acelerar la investigación, la política pública y la innovación en la región.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anchor TOC -->
+    <div class="about-toc" id="about-toc" aria-label="Navegación de la página">
+      <div class="container">
+        <div class="about-toc-inner">
+          <a href="#mision" class="toc-link active">Misión</a>
+          <a href="#que-son" class="toc-link">Qué son los datos abiertos</a>
+          <a href="#metodologia" class="toc-link">Metodología</a>
+          <a href="#api-docs" class="toc-link">API</a>
+          <a href="#licencia" class="toc-link">Licencia</a>
+          <a href="#publicar" class="toc-link">Publicar datos</a>
+          <a href="#faq" class="toc-link">FAQ</a>
+          <a href="#terminos" class="toc-link">Términos</a>
+          <a href="#privacidad" class="toc-link">Privacidad</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         MISIÓN
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="mision" aria-labelledby="mision-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Nuestra misión</div>
+          <h2 class="section-title" id="mision-title">Democratizar el acceso al conocimiento regional</h2>
+          <p class="section-subtitle">Creemos que los datos públicos generan más valor cuando están al alcance de todos: investigadores, gobiernos, periodistas, empresas y ciudadanía.</p>
+        </div>
+
+        <div class="pillar-grid">
+          <div class="pillar-card reveal">
+            <div class="pillar-icon">🔓</div>
+            <h3 class="pillar-title">Acceso libre</h3>
+            <p class="pillar-text">Todos los datasets se publican sin costo, sin registro obligatorio y en formatos abiertos y reutilizables.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-icon">🔍</div>
+            <h3 class="pillar-title">Transparencia</h3>
+            <p class="pillar-text">Cada dataset documenta su origen, metodología de recolección y fecha de actualización.</p>
+          </div>
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-icon">🔗</div>
+            <h3 class="pillar-title">Interoperabilidad</h3>
+            <p class="pillar-text">Publicamos en CSV, JSON, XLSX, SHP y vía API para que los datos se integren fácilmente en cualquier sistema.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         QUÉ SON LOS DATOS ABIERTOS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section bg-subtle" id="que-son" aria-labelledby="que-son-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Conceptos clave</div>
+          <h2 class="section-title" id="que-son-title">¿Qué son los datos abiertos?</h2>
+          <p class="section-subtitle">Datos abiertos son aquellos que cualquier persona puede usar, reutilizar y redistribuir libremente, sujetos como máximo a la exigencia de atribuir su fuente.</p>
+        </div>
+
+        <div class="principles-grid">
+          <div class="principle-card reveal reveal-scale">
+            <div class="principle-num">1</div>
+            <div>
+              <div class="principle-name">Completos</div>
+              <div class="principle-text">Se publican con el mayor nivel de detalle posible, sin restricciones artificiales.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-1">
+            <div class="principle-num">2</div>
+            <div>
+              <div class="principle-name">Primarios</div>
+              <div class="principle-text">Provienen directamente de la fuente que recolecta o produce el dato.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-2">
+            <div class="principle-num">3</div>
+            <div>
+              <div class="principle-name">Oportunos</div>
+              <div class="principle-text">Se publican y actualizan con la rapidez necesaria para preservar su valor.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-3">
+            <div class="principle-num">4</div>
+            <div>
+              <div class="principle-name">Accesibles</div>
+              <div class="principle-text">Disponibles para el mayor número de usuarios y para el mayor rango de propósitos.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale">
+            <div class="principle-num">5</div>
+            <div>
+              <div class="principle-name">Procesables</div>
+              <div class="principle-text">Estructurados razonablemente para permitir su procesamiento automatizado.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-1">
+            <div class="principle-num">6</div>
+            <div>
+              <div class="principle-name">No discriminatorios</div>
+              <div class="principle-text">Disponibles para cualquier persona, sin necesidad de registro previo.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-2">
+            <div class="principle-num">7</div>
+            <div>
+              <div class="principle-name">No propietarios</div>
+              <div class="principle-text">Disponibles en un formato sobre el cual ninguna entidad tiene control exclusivo.</div>
+            </div>
+          </div>
+          <div class="principle-card reveal reveal-scale reveal-delay-3">
+            <div class="principle-num">8</div>
+            <div>
+              <div class="principle-name">Libres de licencia</div>
+              <div class="principle-text">No sujetos a derechos de autor, patente o marca registrada que limiten su uso.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         METODOLOGÍA
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="metodologia" aria-labelledby="metodologia-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Cómo trabajamos</div>
+          <h2 class="section-title" id="metodologia-title">Metodología de publicación</h2>
+          <p class="section-subtitle">Cada dataset atraviesa un proceso estandarizado antes de llegar al catálogo.</p>
+        </div>
+
+        <div class="steps-list" style="margin-inline:auto;">
+          <div class="step-item reveal">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Recolección</div>
+              <div class="step-text">Los equipos técnicos y organismos colaboradores remiten los datos junto con su documentación de origen.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-1">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Validación y anonimización</div>
+              <div class="step-text">Se verifica calidad, consistencia y se eliminan datos personales o sensibles antes de la publicación.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-2">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Estandarización</div>
+              <div class="step-text">Los datos se normalizan a formatos abiertos (CSV, JSON, XLSX, SHP) con metadatos descriptivos.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-3">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-title">Publicación</div>
+              <div class="step-text">El dataset se incorpora al catálogo, se indexa en la búsqueda y queda disponible vía descarga o API.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-4">
+            <div class="step-num">5</div>
+            <div>
+              <div class="step-title">Actualización periódica</div>
+              <div class="step-text">Cada dataset indica su frecuencia de actualización y se revisa según ese calendario.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         API DOCS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section bg-subtle" id="api-docs" aria-labelledby="api-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Para desarrolladores</div>
+          <h2 class="section-title" id="api-title">Cómo usar la API</h2>
+          <p class="section-subtitle">Consulta el catálogo de forma programática. La API es de solo lectura, pública y no requiere autenticación para uso liviano.</p>
+        </div>
+
+        <div class="content-section-narrow">
+          <div class="api-endpoint">
+            <span class="api-method">GET</span>
+            <span class="api-path">/api/v1/datasets</span>
+            <span class="api-desc">Lista todos los datasets del catálogo</span>
+          </div>
+          <div class="api-endpoint">
+            <span class="api-method">GET</span>
+            <span class="api-path">/api/v1/datasets/{id}</span>
+            <span class="api-desc">Detalle de un dataset específico</span>
+          </div>
+          <div class="api-endpoint">
+            <span class="api-method">GET</span>
+            <span class="api-path">/api/v1/datasets?category=economia</span>
+            <span class="api-desc">Filtra datasets por categoría</span>
+          </div>
+          <div class="api-endpoint">
+            <span class="api-method">GET</span>
+            <span class="api-path">/api/v1/categories</span>
+            <span class="api-desc">Lista de categorías disponibles</span>
+          </div>
+
+          <h3 class="content-prose" style="color:var(--text-primary);font-size:var(--text-lg);font-weight:var(--font-semibold);margin-top:var(--space-8);margin-bottom:var(--space-2);">Ejemplo de solicitud</h3>
+          <div class="code-block" tabindex="0" role="group" aria-label="Ejemplo de código: solicitud fetch a la API">
+<span class="tok-com">// JavaScript — fetch</span>
+<span class="tok-fn">fetch</span>(<span class="tok-str">'https://api.datacaf.org/v1/datasets?category=energia'</span>)
+  .<span class="tok-fn">then</span>(res <span class="tok-key">=></span> res.<span class="tok-fn">json</span>())
+  .<span class="tok-fn">then</span>(data <span class="tok-key">=></span> <span class="tok-fn">console</span>.<span class="tok-fn">log</span>(data));</div>
+
+          <h3 class="content-prose" style="color:var(--text-primary);font-size:var(--text-lg);font-weight:var(--font-semibold);margin-top:var(--space-8);margin-bottom:var(--space-2);">Ejemplo de respuesta</h3>
+          <div class="code-block" tabindex="0" role="group" aria-label="Ejemplo de código: respuesta JSON de la API">
+{
+  <span class="tok-key">"total"</span>: <span class="tok-num">487</span>,
+  <span class="tok-key">"results"</span>: [
+    {
+      <span class="tok-key">"id"</span>: <span class="tok-num">3</span>,
+      <span class="tok-key">"title"</span>: <span class="tok-str">"Acceso a Electricidad y Energías Renovables 2010-2023"</span>,
+      <span class="tok-key">"category"</span>: <span class="tok-str">"energia"</span>,
+      <span class="tok-key">"formats"</span>: [<span class="tok-str">"csv"</span>, <span class="tok-str">"xlsx"</span>],
+      <span class="tok-key">"updated"</span>: <span class="tok-str">"2024-06"</span>
+    }
+  ]
+}</div>
+          <p class="content-prose" style="margin-top:var(--space-4);">Límite de uso: 1.000 solicitudes por hora por IP para el nivel gratuito. Para volúmenes mayores, <a href="mailto:datosabiertos@caf.com">contacta al equipo del portal</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         LICENCIA
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="licencia" aria-labelledby="licencia-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Uso de los datos</div>
+          <h2 class="section-title" id="licencia-title">Licencia de Datos Abiertos CAF</h2>
+          <p class="section-subtitle">Todos los datasets del portal se publican bajo esta licencia, equivalente en espíritu a Creative Commons Atribución 4.0 (CC BY 4.0).</p>
+        </div>
+
+        <div class="license-card">
+          <div class="license-panel allow reveal">
+            <div class="license-panel-title">✅ Permitido</div>
+            <ul>
+              <li><span>•</span><span>Usar los datos con fines comerciales y no comerciales.</span></li>
+              <li><span>•</span><span>Copiar, distribuir y transmitir los datos libremente.</span></li>
+              <li><span>•</span><span>Adaptar, combinar y construir productos derivados.</span></li>
+              <li><span>•</span><span>Publicar análisis, visualizaciones e investigaciones basadas en ellos.</span></li>
+            </ul>
+          </div>
+          <div class="license-panel restrict reveal reveal-delay-1">
+            <div class="license-panel-title">⚠️ Condiciones</div>
+            <ul>
+              <li><span>•</span><span>Atribuir la fuente: "CAF – Banco de Desarrollo de América Latina y el Caribe".</span></li>
+              <li><span>•</span><span>No sugerir que CAF respalda tu uso específico de los datos.</span></li>
+              <li><span>•</span><span>Indicar si realizaste modificaciones sobre el dataset original.</span></li>
+              <li><span>•</span><span>Enlazar a la licencia cuando redistribuyas los datos.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PUBLICAR DATOS
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section bg-subtle" id="publicar" aria-labelledby="publicar-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Para organismos</div>
+          <h2 class="section-title" id="publicar-title">¿Tu organización tiene datos que compartir?</h2>
+          <p class="section-subtitle">Así es el proceso para incorporar un nuevo dataset al catálogo de DataCAF.</p>
+        </div>
+
+        <div class="steps-list" style="margin-inline:auto;">
+          <div class="step-item reveal">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Contacto inicial</div>
+              <div class="step-text">Escribe a <a href="mailto:datosabiertos@caf.com">datosabiertos@caf.com</a> describiendo el dataset y su relevancia para la región.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-1">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Revisión técnica</div>
+              <div class="step-text">El equipo del portal evalúa formato, calidad y cumplimiento de los principios de datos abiertos.</div>
+            </div>
+          </div>
+          <div class="step-item reveal reveal-delay-2">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Publicación y mantenimiento</div>
+              <div class="step-text">Una vez aprobado, se publica en el catálogo y tu organización queda como fuente oficial del dataset.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:var(--space-10);">
+          <a href="mailto:datosabiertos@caf.com" class="btn btn-primary btn-lg" id="btn-publicar-datos">
+            📤 Publicar mis datos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         FAQ
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Ayuda</div>
+          <h2 class="section-title" id="faq-title">Preguntas frecuentes</h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question" aria-expanded="true">
+              ¿Necesito registrarme para descargar datasets?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>No. Todos los datasets se pueden buscar, previsualizar y descargar libremente sin necesidad de crear una cuenta.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Con qué frecuencia se actualizan los datos?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Depende del dataset: algunos se actualizan mensualmente y otros de forma anual. La fecha de última actualización se muestra en la ficha de cada dataset.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Puedo usar los datos en un producto comercial?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Sí. La Licencia de Datos Abiertos CAF permite uso comercial siempre que se atribuya correctamente la fuente. Revisa la sección <a href="#licencia">Licencia</a> para más detalle.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿La API tiene algún costo?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>El nivel gratuito no tiene costo y permite hasta 1.000 solicitudes por hora. Para integraciones de mayor volumen, contáctanos.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Encontré un error en un dataset, ¿qué hago?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Escríbenos a <a href="mailto:datosabiertos@caf.com">datosabiertos@caf.com</a> indicando el nombre del dataset y el error encontrado. Lo revisamos junto al organismo que lo publicó.</p>
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              ¿Cómo cito un dataset del portal en un trabajo académico?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+              <p>Usa el nombre del dataset, "CAF – Banco de Desarrollo de América Latina y el Caribe" como fuente, el año de publicación y la URL del dataset en el portal.</p>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         TÉRMINOS DE USO
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section bg-subtle" id="terminos" aria-labelledby="terminos-title">
+      <div class="container content-section-narrow">
+        <div class="section-header" style="text-align:left;">
+          <div class="section-eyebrow">Legal</div>
+          <h2 class="section-title" id="terminos-title">Términos de uso</h2>
+        </div>
+        <div class="content-prose">
+          <p>El acceso y uso de este portal implica la aceptación de los presentes términos.</p>
+          <h3>Uso del portal</h3>
+          <ul>
+            <li>El portal se ofrece "tal cual", sin garantías de disponibilidad ininterrumpida.</li>
+            <li>Está prohibido el uso de técnicas automatizadas que degraden el servicio para otros usuarios.</li>
+            <li>Los datasets se entregan con la información de metadatos disponible al momento de la publicación.</li>
+          </ul>
+          <h3>Responsabilidad</h3>
+          <ul>
+            <li>CAF no se responsabiliza por decisiones tomadas a partir del uso o interpretación de los datos publicados.</li>
+            <li>Los organismos colaboradores son responsables por la exactitud de los datos que remiten.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════
+         PRIVACIDAD
+    ══════════════════════════════════════════════════════════ -->
+    <section class="content-section" id="privacidad" aria-labelledby="privacidad-title">
+      <div class="container content-section-narrow">
+        <div class="section-header" style="text-align:left;">
+          <div class="section-eyebrow">Legal</div>
+          <h2 class="section-title" id="privacidad-title">Privacidad</h2>
+        </div>
+        <div class="content-prose">
+          <p>DataCAF publica exclusivamente datos agregados y anonimizados. Ningún dataset del catálogo contiene información personal identificable.</p>
+          <h3>Datos de navegación</h3>
+          <ul>
+            <li>El portal no utiliza cookies de seguimiento ni comparte datos de navegación con terceros.</li>
+            <li>Las preferencias de tema (claro/oscuro) se guardan localmente en tu navegador y nunca se envían a un servidor.</li>
+          </ul>
+          <h3>Contacto</h3>
+          <p>Ante cualquier consulta sobre privacidad, escribe a <strong><a href="mailto:datosabiertos@caf.com">datosabiertos@caf.com</a></strong>.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Inicio - DataCAF">
+            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+              <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" fill="none" stroke="#6253E8" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#6253E8"/>
+            </svg>
+            <span class="footer-logo-text">Data<span>CAF</span></span>
+          </a>
+          <p class="footer-desc">
+            Portal oficial de datos abiertos de CAF — Banco de Desarrollo de América Latina y el Caribe.
+            Comprometidos con la transparencia y el acceso libre al conocimiento.
+          </p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="https://twitter.com/cafbanco" target="_blank" rel="noopener" class="social-btn" aria-label="Twitter CAF" title="Twitter">𝕏</a>
+            <a href="https://www.linkedin.com/company/cafbanco" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn CAF" title="LinkedIn">in</a>
+            <a href="https://github.com/caf" target="_blank" rel="noopener" class="social-btn" aria-label="GitHub CAF" title="GitHub">⌨</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Portal</h3>
+          <ul class="footer-links">
+            <li><a href="datasets.html" class="footer-link">📊 Catálogo de datasets</a></li>
+            <li><a href="datasets.html?format=api" class="footer-link">⚡ APIs disponibles</a></li>
+            <li><a href="guia-usuario.html" class="footer-link">📘 Guía de Usuario</a></li>
+            <li><a href="wiki.html" class="footer-link">📚 Wiki</a></li>
+            <li><a href="about.html" class="footer-link">ℹ️ Acerca del portal</a></li>
+            <li><a href="about.html#metodologia" class="footer-link">📖 Metodología</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Recursos</h3>
+          <ul class="footer-links">
+            <li><a href="about.html#api-docs" class="footer-link">📄 Documentación API</a></li>
+            <li><a href="about.html#licencia" class="footer-link">⚖️ Licencia abierta</a></li>
+            <li><a href="about.html#faq" class="footer-link">❓ Preguntas frecuentes</a></li>
+            <li><a href="https://www.caf.com" target="_blank" rel="noopener" class="footer-link">🌐 CAF.com ↗</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-col-title">Soporte</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:datosabiertos@caf.com" class="footer-link">✉️ Contacto</a></li>
+            <li><a href="about.html#publicar" class="footer-link">📤 Publicar datos</a></li>
+            <li><a href="about.html#terminos" class="footer-link">📋 Términos de uso</a></li>
+            <li><a href="about.html#privacidad" class="footer-link">🔒 Privacidad</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2024 CAF – Banco de Desarrollo de América Latina y el Caribe.
+          Datos publicados bajo <strong>Licencia de Datos Abiertos CAF</strong>.
+        </p>
+        <nav class="footer-legal" aria-label="Links legales">
+          <a href="about.html#terminos">Términos</a>
+          <a href="about.html#privacidad">Privacidad</a>
+          <a href="about.html#licencia">Licencia</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════════════════════ -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

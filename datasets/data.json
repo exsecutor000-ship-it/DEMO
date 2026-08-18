@@ -1,0 +1,11 @@
+﻿{
+  "meta": {
+    "total": 487,
+    "version": "1.0.0",
+    "updated": "2024-08-18",
+    "portal": "DataCAF",
+    "license": "Licencia de Datos Abiertos CAF"
+  },
+  "categories": ["economia","infraestructura","energia","salud","educacion","medioambiente","transporte","social"],
+  "formats": ["csv","json","api","xlsx","shp"]
+}
